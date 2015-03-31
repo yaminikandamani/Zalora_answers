@@ -1,0 +1,58 @@
+1.	Give us your suggestions on how we could make our data set better / more useful.
+GOAL: to determine which products are better than others, essentially a venture wide ranking for all of its products. The ranking can be different for each different product category / subcategory
+Suggestions:
+1.	Based on the net sales volume (assuming that retuned, rejected and cancelled counts are taken into account) the best-selling product can be determined, but the problem is it has to be normalized to be able to generalize across various countries. Example: The best-selling product in Singapore can have a net sales volume of 30 but this sales volume may not be best in Australia, as it depends on the population density and Zalora’s market share in each and every country. Hence the sales volume has be normalized with the Number of customers in each and every country, if the goal is to find which products are better than others.  
+2.	But I would recommend that the Best-selling product ranking can be done for each geographic region separately rather than doing it across all the countries, as the culture and taste of the people will be different across different regions and the best-selling product in SG might not be liked by the people in AU incase if it’s going to be recommended to them and displayed on their home page. 
+Recommendations for the data collection process: 
+Customer table: Customer details like customer id, Country of purchase, Other Demographic details like age, gender, place of living, income, type of card(credit/debit or visa/master) used for purchase, the date of sign up with zalora  etc are good things to have. 
+Product Table:  aggregated version is presented. But it can have 1 record per payment transaction made by the customer along with the customer id, so that it can be joined with customer table and in order to do more analysis about the customer. Other things like Date of purchase can also be included as a part of this table. 
+If the details are collected and stored in the above mentioned format, would provide the following advantages.
+3.	What product each and every customer is buying and what is the best-selling product in each and every country?  
+4.	Target the Right Customer at the right time at the right place
+To find the right customer:  Customer segmentation can be done using RFM modeling (Recency , Frequency and Monetory) and channel your marketing resources accordingly based on their RFM value. This will help you to move from Blanket Marketing to Data Based Marketing. Again, this is also recommended to be done for each and every geographic region/ market, as the RFM value of 445 may be a top customer in SG but the same value can be there for a least profitable customer in AU. So it definitely depends on the customer behavior in each and every market. 
+
+To find the Right Time: Average time between purchases of every customer can be calculated. If the average time between purchase 2 and purchase 3 is 20 days and if the customer did not make his 3rd purchase after 20 days of his 2nd purchase, then a timely campaigning message can be sent to him. 
+
+To find the Right Place: Response modeling can be done based on the historical records of the previous campaigns. This can be used to find the propensity of response to the campaigns through the particular channel. Based on this the appropriate channel can also be selected – email or telemarketing etc. for each customer.
+
+5.	Market Basket Analysis or Association Rule Mining: Machine learning technique like Apriori can be used to find the Cross selling or upselling opportunies . This analysis will also give items that are frequently purchased together. This can help the company in sorting the catalogs/ search results and provide recommendations to the customer about the frequent items that are bought together. They might be interested in it. 
+
+6.	Recommendation system/ collaborative filtering – Can be used to send more profitable email campaigns using similarity measures. 
+2) With the given dataset, can you come up with a scientific approach and model for our ranking? 	
+Machine learning model: Decision Trees can be used with Ranking of the product as the target, obtain some interesting rules. Example, if the product ranking is 1, then season group = spring/ summer, activation month = December, cat_type=shoes, views_count =4000, impression count = 150000, etc. 
+This shows that the top ranking product has the following characteristics. This helps to understand the leading indicators of a top ranking product. 
+Advantages of the model:  So if any new product comes, this model can be used to predict the ranking of the product. This will be helpful whether this new product can be displayed on products homepage or placement of the new product in the product catalogs and also to send more profitable email campaigns.
+Target of the model:  Ranking of the product – based on the sales volume 
+Predictors -  
+1.	Colours
+2.	Gender
+3.	Activation month 
+4.	Season_group
+5.	Brand
+6.	Original price
+7.	Special price
+8.	Sub_cat_type
+9.	Cat-Type
+10.	Stock
+11.	Views_count
+12.	Views_count_last_7days
+13.	Views_count_last_30days
+14.	Impressions count
+15.	Impressions count last 7 days
+16.	Impressions count last 30days
+17.	Net sale count 
+18.	Net sale count last 7 days
+19.	Net sale count last 30 days
+20.	Rejected returned sale count
+21.	Rejected returned sale count last 7 days
+22.	Rejected returned sale count last 30 days
+23.	Cancelled sale count
+24.	Cancelled sale count last 7 days
+25.	Cancelled sale count last 30 days
+3. How would you test, train, and evaluate your model?
+Training: 70% of the sample 
+Testing: 20% of the sample
+Evaluation/Validation – 10% of the sample.  Even an out of band sample can be used for validation. In that case, 30% of the data can be used for testing. 
+1.	Check the accuracy of the model – make sure training and testing accuracy is pretty close, in order to ensure that there is no over fitting in the training model. And then validate the model, to check if the prediction accuracy is equal to training and testing. 
+2.	Predictor importance – to know the important factors influencing the target
+3.	Lift and Gains chart – check how much lift/gain the predicted model has provided when compared to random guess/ No model. 
