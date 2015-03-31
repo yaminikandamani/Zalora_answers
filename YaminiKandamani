@@ -18,7 +18,13 @@ To find the Right Place: Response modeling can be done based on the historical r
 5.	Market Basket Analysis or Association Rule Mining: Machine learning technique like Apriori can be used to find the Cross selling or upselling opportunies . This analysis will also give items that are frequently purchased together. This can help the company in sorting the catalogs/ search results and provide recommendations to the customer about the frequent items that are bought together. They might be interested in it. 
 
 6.	Recommendation system/ collaborative filtering – Can be used to send more profitable email campaigns using similarity measures. 
-2) With the given dataset, can you come up with a scientific approach and model for our ranking? 	
+
+
+
+
+
+2) With the given dataset, can you come up with a scientific approach and model for our ranking?
+
 Machine learning model: Decision Trees can be used with Ranking of the product as the target, obtain some interesting rules. Example, if the product ranking is 1, then season group = spring/ summer, activation month = December, cat_type=shoes, views_count =4000, impression count = 150000, etc. 
 This shows that the top ranking product has the following characteristics. This helps to understand the leading indicators of a top ranking product. 
 Advantages of the model:  So if any new product comes, this model can be used to predict the ranking of the product. This will be helpful whether this new product can be displayed on products homepage or placement of the new product in the product catalogs and also to send more profitable email campaigns.
@@ -49,7 +55,13 @@ Predictors -
 23.	Cancelled sale count
 24.	Cancelled sale count last 7 days
 25.	Cancelled sale count last 30 days
+
+
+
 3. How would you test, train, and evaluate your model?
+
+
+
 Training: 70% of the sample 
 Testing: 20% of the sample
 Evaluation/Validation – 10% of the sample.  Even an out of band sample can be used for validation. In that case, 30% of the data can be used for testing. 
